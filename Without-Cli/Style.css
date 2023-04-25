@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.darkNav{
+    background-color: rgb(102, 102, 102);
+    
+}
+.active{
+    background-color: aquamarine;
+}
+nav{
+    background-color: #c5bfbf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-family: sans-serif;
+    margin-bottom: 50px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+}
+ul li{
+    list-style: none;
+    padding:15px 20px;
+    cursor: pointer;
+}
+ul li:hover{
+    background-color: aqua;
+}
+nav ul li a{
+    text-decoration: none;
+    color:black
+}
+.btn-toggle{
+    padding:15px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: solid black;
+    border-width:  1px 1px 1px 1px;
+    color:black;
+    font-size: 14px;
+    
+    
+    
+}
+.btn-toggle:hover{
+    background-color:blueviolet;
+    border:none;
+}

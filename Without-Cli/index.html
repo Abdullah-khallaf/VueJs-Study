@@ -12,7 +12,7 @@
 
 
     <header>
-        <nav :class="{darkNav: useDarkNav}">
+        <nav :class="navBarClasses">
             <ul>
                 <li v-for=" (page, index) in pages" :key="index" 
                 :class="{active: activePage==index }"><!--key is identifier for links to help vue know where it is-->
@@ -43,12 +43,19 @@
 <script>
    // creating a vue instance and mounted the template of html
     Vue.createApp({
+        computed: {
+            navBarClasses(){
+                return{
+                    'darkNav': this.useDarkNav,
+                } 
+            }
+        },
         //here we pass opitions(data) to the html options is like objects 
         data(){
             //provide data to options
             return{
                 activePage:0,
-                useDarkNav: true,
+                useDarkNav: false,
             pages: [
                 {
                     link: {text: 'Home', url:"index.html"},

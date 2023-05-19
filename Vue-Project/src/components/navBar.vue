@@ -1,5 +1,5 @@
 <template>
-    <nav :class="navBarClasses">
+      <nav :class="navBarClasses">
       <ul>
         <li
           v-for=" (page, index) in pages"
@@ -22,6 +22,9 @@
         <button class="btn-toggle" @click.prevent="useDarkNav = !useDarkNav">
           Background Toggle
         </button>
+        <button class="btn-add" @click.prevent="addNumber()">
+          click me to plus 1 {{ number }}
+        </button>
       </form>
     </nav>
 </template>
@@ -34,6 +37,38 @@ export default {
             darkNav: this.useDarkNav,
           };
         },
+      },
+      data() {
+        //provide data to options
+        return {
+          activePage: 0,
+          useDarkNav: false,
+          number: 0,
+          pages: [
+            {
+              link: { text: "Home", url: "index.html" },
+              pageTitle: "Home",
+              content: "This Home Page",
+            },
+            {
+              link: { text: "About", url: "about.html" },
+              pageTitle: "About",
+              content: "This About Page",
+            },
+            {
+              link: { text: "Contact", url: "contact.html" },
+              pageTitle: "Contact",
+              content: "This Contact Page",
+            },
+          ],
+        };
+      },
+      methods:{
+        addNumber(){
+          let number = this.number;
+          number++;
+          console.log(number);
+        }
       }
 }
 </script>

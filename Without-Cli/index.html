@@ -32,6 +32,9 @@
         <button class="btn-toggle" @click.prevent="useDarkNav = !useDarkNav">
           Background Toggle
         </button>
+        <button class="btn-add" @click.prevent="addNumber()">
+          click me to plus 1 {{ number }}
+        </button>
       </form>
     </nav>
 
@@ -53,6 +56,7 @@
         return {
           activePage: 0,
           useDarkNav: false,
+          number: 0,
           pages: [
             {
               link: { text: "Home", url: "index.html" },
@@ -72,6 +76,13 @@
           ],
         };
       },
+      methods:{
+        addNumber(){
+          let number = this.number;
+          number++;
+          console.log(number);
+        }
+      }
     });
 
     app.component("page-viewer", {

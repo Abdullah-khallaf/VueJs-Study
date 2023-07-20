@@ -1,12 +1,18 @@
-<script >
+<script>
+import MyForm from "./components/icons/MyForm.vue";
 
+export default {
+  name: "App",
+  components: {
+    MyForm,
+  },
+};
 </script>
 
 <template>
-  <h1> hello world</h1>
+  <div class="container">
+    <MyForm />
+  </div>
 </template>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
